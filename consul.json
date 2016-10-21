@@ -1,0 +1,20 @@
+{
+  "data_dir": "/tmp/consul",
+  "ports" : {
+    "dns" : 53
+  },
+  "services": [
+    {
+      "name": "${CONSUL_SERVICE_NAME:-telegraf}-tcp",
+      "port": 8094
+    },
+    {
+      "name": "${CONSUL_SERVICE_NAME:-telegraf}-udp",
+      "port": 8092
+    },
+    {
+      "name": "${CONSUL_SERVICE_NAME:-telegraf}-statsd",
+      "port": 8125
+    }
+  ]
+}
